@@ -1,8 +1,10 @@
 from flask import Flask, request, render_template, jsonify
+from flask_cors import CORS
 from model import EmbeddingClassi
 from sklearn.neighbors import NearestNeighbors
 
 app = Flask(__name__)
+CORS(app)
 model = EmbeddingClassi()
 
 @app.route('/')
